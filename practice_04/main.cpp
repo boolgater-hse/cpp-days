@@ -68,6 +68,7 @@ int main()
     }
     cout << endl;
     cout << "Done";
+    cout << endl;
 
     cout << "Right rotation: " << endl;
     cout << "Before" << endl;
@@ -83,6 +84,10 @@ int main()
         cout << one[i] << ' ';
     }
     cout << endl;
+    cout << "Done";
+    cout << endl;
+
+    cout << "Alives: " << DynArray::alive << endl;
     cout << "Done";
 
     return 0;
