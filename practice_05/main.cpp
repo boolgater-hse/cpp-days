@@ -35,7 +35,7 @@ int main()
     double* a = eqs.solveByCramersRule();
 
     cout << endl;
-    for (int i = 0; i < mat.getN(); ++i)
+    for (int i = 0; i < eqs.getNumberOfRoots(); ++i)
     {
         cout << a[i] << ' ';
     }

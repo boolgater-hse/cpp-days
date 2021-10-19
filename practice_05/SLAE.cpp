@@ -37,7 +37,7 @@ double* SLAE::solveByCramersRule()
     {
         answer[i] /= mainDeterminant;
     }
-    this->lastRootsN = matrix.getN;
+    this->lastRootsN = matrix.getN();
 
     return answer;
 }
