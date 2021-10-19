@@ -9,10 +9,13 @@ class SLAE
 private:
     Mat2D matrix;
     VecND vector;
+    size_t lastRootsN;
 public:
     SLAE(const Mat2D& _matrix, const VecND& _vector);
 
     double* solveByCramersRule();
+
+    size_t getNumberOfRoots();
 
     bool checkCompatibility();
 };

@@ -5,6 +5,7 @@ SLAE::SLAE(const Mat2D& _matrix, const VecND& _vector)
 {
     matrix = _matrix;
     vector = _vector;
+    lastRootsN = 0;
 }
 
 double* SLAE::solveByCramersRule()
@@ -36,13 +37,19 @@ double* SLAE::solveByCramersRule()
     {
         answer[i] /= mainDeterminant;
     }
+    this->lastRootsN = matrix.getN;
 
     return answer;
 }
 
+size_t SLAE::getNumberOfRoots()
+{
+    return this->lastRootsN;
+}
+
 bool SLAE::checkCompatibility()
 {
-    Mat2D temp(std::max(matrix.getM(), vector.getSize()) ,matrix.getN() + 1);
+    Mat2D temp(std::max(matrix.getM(), vector.getSize()), matrix.getN() + 1);
 
     for (size_t i = 0; i < temp.getN(); ++i)
     {
