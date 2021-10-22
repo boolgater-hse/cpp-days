@@ -32,6 +32,38 @@ Mat2D::Mat2D(const Mat2D& other)
     }
 }
 
+Mat2D::Mat2D(const std::initializer_list <std::initializer_list <int>>& other) : Mat2D()
+{
+    size_t _n = other.size();
+    size_t _m = 0;
+
+    for (size_t i = 0; i < _n; ++i)
+    {
+        if ((other.begin() + i)->size() > _m)
+        {
+            _m = (other.begin() + i)->size();
+        }
+    }
+
+    *this = Mat2D(_n, _m);
+
+    for (size_t i = 0; i < _n; ++i)
+    {
+        for (size_t j = 0; j < _m; ++j)
+        {
+            this->operator[](i)[j] = 0;
+        }
+    }
+
+    for (size_t i = 0; i < _n; ++i)
+    {
+        for (size_t j = 0; j < (other.begin() + i)->size(); ++j)
+        {
+            this->operator[](i)[j] = *((other.begin() + i)->begin() + j);
+        }
+    }
+}
+
 size_t Mat2D::getN() const
 {
     return this->n;
@@ -42,7 +74,7 @@ size_t Mat2D::getM() const
     return this->m;
 }
 
-void Mat2D::input()
+void Mat2D::input() const
 {
     for (size_t i = 0; i < this->n; ++i)
     {
@@ -53,7 +85,7 @@ void Mat2D::input()
     }
 }
 
-void Mat2D::output()
+void Mat2D::output() const
 {
     for (size_t i = 0; i < this->n; ++i)
     {

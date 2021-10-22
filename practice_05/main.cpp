@@ -6,29 +6,29 @@ using namespace std;
 
 int main()
 {
-    Mat2D mat(3, 3);
-    VecND vec(3);
+    Mat2D mat = {{1,34,4}, {66,5,6}, {2,0,2}};
+    VecND vec = {33,44,55};
 
-    srand(time(0));
+//    srand(time(0));
 
 //    mat.input();
 //    vec.input();
 
-    for (int i = 0; i < mat.getN(); ++i)
-    {
-        for (int j = 0; j < mat.getM(); ++j)
-        {
-            mat[i][j] = rand() % 10 + 1;
-        }
-    }
+//    for (int i = 0; i < mat.getN(); ++i)
+//    {
+//        for (int j = 0; j < mat.getM(); ++j)
+//        {
+//            mat[i][j] = rand() % 10 + 1;
+//        }
+//    }
+//
+//    for (int i = 0; i < vec.getSize(); ++i)
+//    {
+//        vec[i] = rand() % 20 + 1;
+//    }
 
-    for (int i = 0; i < vec.getSize(); ++i)
-    {
-        vec[i] = rand() % 20 + 1;
-    }
-
-    mat.output();
     vec.output();
+    mat.output();
 
     SLAE eqs(mat, vec);
 

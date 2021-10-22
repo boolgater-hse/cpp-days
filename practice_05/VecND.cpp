@@ -17,6 +17,16 @@ VecND::VecND(const VecND& other)
     }
 }
 
+VecND::VecND(const std::initializer_list <int>& other) : VecND()
+{
+    *this = VecND(other.size());
+
+    for (size_t i = 0; i < this->maxSize; ++i)
+    {
+        this->data[i] = *(other.begin() + i);
+    }
+}
+
 int& VecND::operator[](size_t index) const
 {
     return this->data[index];

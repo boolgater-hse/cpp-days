@@ -20,13 +20,15 @@ public:
 
     Mat2D(const Mat2D& other);
 
+    Mat2D(const std::initializer_list <std::initializer_list <int>>& other);
+
     size_t getN() const;
 
     size_t getM() const;
 
-    void input();
+    void input() const;
 
-    void output();
+    void output() const;
 
     VecND& operator[](size_t index) const;
 
