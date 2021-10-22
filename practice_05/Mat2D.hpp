@@ -26,9 +26,9 @@ public:
 
     size_t getM() const;
 
-    void input() const;
+    void input();
 
-    void output() const;
+    void output();
 
     VecND& operator[](size_t index) const;
 

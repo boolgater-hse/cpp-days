@@ -6,40 +6,68 @@ using namespace std;
 
 int main()
 {
-    Mat2D mat = {{1,34,4}, {66,5,6}, {2,0,2}};
-    VecND vec = {33,44,55};
-
-//    srand(time(0));
+    Mat2D mat =
+            {{3, 6, 2},
+             {4, 6, 6},
+             {2, 6, 8}};
 
 //    mat.input();
-//    vec.input();
-
-//    for (int i = 0; i < mat.getN(); ++i)
-//    {
-//        for (int j = 0; j < mat.getM(); ++j)
-//        {
-//            mat[i][j] = rand() % 10 + 1;
-//        }
-//    }
-//
-//    for (int i = 0; i < vec.getSize(); ++i)
-//    {
-//        vec[i] = rand() % 20 + 1;
-//    }
-
-    vec.output();
+    cout << "Matrix:" << endl;
     mat.output();
 
+    cout << "Rows num: " << mat.getN() << endl;
+    cout << "Cols num: " << mat.getM() << endl;
+    cout << "Det: " << mat.getDeterminant() << endl;
+    cout << "Rank: " << mat.getRank() << endl;
+    cout << "Zero rows? " << mat.checkZeroRows() << endl;
+
+    cout << endl;
+
+    VecND vec = {4, 6, 3};
+
+//    vec.input();
+    cout << "Vector:" << endl;
+    vec.output();
+
+    cout << "Vector size: " << vec.getSize() << endl;
+
+    cout << "Second matrix:" << endl;
+    Mat2D mat2 =
+            {{5, 2, 2},
+             {9, 3, 3},
+             {1, 6, 0}};
+    mat2.output();
+
+    cout << "Matrix adding:" << endl;
+    mat = mat + mat2;
+    mat.output();
+
+    cout << "Matrix multiplying:" << endl;
+    mat = mat * mat2;
+    mat.output();
+
+    cout << "Matrix transpose:" << endl;
+    mat = mat.transpose();
+    mat.output();
+
+    cout << "SLAE solution for matrix and vector:" << endl;
     SLAE eqs(mat, vec);
 
     double* a = eqs.solveByCramersRule();
 
-    cout << endl;
     for (int i = 0; i < eqs.getNumberOfRoots(); ++i)
     {
         cout << a[i] << ' ';
     }
     delete[] a;
+
+    cout << endl << endl;
+
+    cout << "Vector multiple matrix:" << endl;
+    mat = mat * vec;
+    mat.output();
+
+    cout << "Done";
 
     return 0;
 }

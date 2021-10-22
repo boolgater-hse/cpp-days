@@ -58,6 +58,10 @@ size_t VecND::getSize() const
 
 void VecND::input()
 {
+    std::cin >> this->maxSize;
+
+    *this = VecND(this->maxSize);
+
     for (int i = 0; i < this->maxSize; ++i)
     {
         std::cin >> this->data[i];

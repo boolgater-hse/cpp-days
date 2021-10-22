@@ -74,8 +74,12 @@ size_t Mat2D::getM() const
     return this->m;
 }
 
-void Mat2D::input() const
+void Mat2D::input()
 {
+    std::cin >> this->n >> this->m;
+
+    *this = Mat2D(this->n, this->m);
+
     for (size_t i = 0; i < this->n; ++i)
     {
         for (size_t j = 0; j < this->m; ++j)
@@ -85,7 +89,7 @@ void Mat2D::input() const
     }
 }
 
-void Mat2D::output() const
+void Mat2D::output()
 {
     for (size_t i = 0; i < this->n; ++i)
     {
