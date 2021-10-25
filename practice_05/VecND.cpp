@@ -2,14 +2,14 @@
 
 VecND::VecND(size_t n)
 {
-    data = new int[n];
+    data = new size_t[n];
     maxSize = n;
 }
 
 VecND::VecND(const VecND& other)
 {
     this->maxSize = other.maxSize;
-    this->data = new int[maxSize];
+    this->data = new size_t[maxSize];
 
     for (size_t i = 0; i < other.maxSize; ++i)
     {
@@ -27,7 +27,7 @@ VecND::VecND(const std::initializer_list <int>& other) : VecND()
     }
 }
 
-int& VecND::operator[](size_t index) const
+size_t& VecND::operator[](size_t index) const
 {
     return this->data[index];
 }
@@ -39,7 +39,7 @@ VecND& VecND::operator=(const VecND& other)
     if (this->data != nullptr && this->data != other.data)
     {
         delete[] this->data;
-        this->data = new int[this->maxSize];
+        this->data = new size_t[this->maxSize];
     }
 
     for (size_t i = 0; i < this->maxSize; ++i)
@@ -48,6 +48,18 @@ VecND& VecND::operator=(const VecND& other)
     }
 
     return *this;
+}
+
+VecND VecND::operator*(size_t other)
+{
+    VecND temp = *this;
+
+    for (size_t i = 0; i < temp.maxSize; ++i)
+    {
+        temp.operator[](i) *= other;
+    }
+
+    return temp;
 }
 
 size_t VecND::getSize() const

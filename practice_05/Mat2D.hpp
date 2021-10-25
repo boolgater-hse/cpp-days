@@ -34,11 +34,15 @@ public:
 
     Mat2D& operator=(const Mat2D& other);
 
-    Mat2D& operator+(const Mat2D& other);
+    Mat2D operator+(const Mat2D& other);
 
-    Mat2D& operator*(const Mat2D& other);
+    Mat2D operator*(const Mat2D& other);
 
-    Mat2D& operator*(const VecND& other);
+    Mat2D operator*(const VecND& other);
+
+    Mat2D operator*(size_t other);
+
+    Mat2D operator^(size_t pow);
 
     Mat2D& transpose();
 

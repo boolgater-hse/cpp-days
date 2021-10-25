@@ -31,6 +31,12 @@ int main()
 
     cout << "Vector size: " << vec.getSize() << endl;
 
+    cout << endl;
+
+    cout << "Vector on number multiplying:" << endl;
+    VecND vec_mult = vec * 3;
+    vec_mult.output();
+
     cout << "Second matrix:" << endl;
     Mat2D mat2 =
             {{5, 2, 2},
@@ -38,12 +44,24 @@ int main()
              {1, 6, 0}};
     mat2.output();
 
+    cout << "Matrix pow:" << endl;
+    Mat2D mat_pow =
+            {{5, 2, 2},
+             {9, 4, 3},
+             {1, 2, 9}};
+    mat_pow = mat_pow ^ 3;
+    mat_pow.output();
+
     cout << "Matrix adding:" << endl;
     mat = mat + mat2;
     mat.output();
 
-    cout << "Matrix multiplying:" << endl;
+    cout << "Matrix on matrix multiplying:" << endl;
     mat = mat * mat2;
+    mat.output();
+
+    cout << "Matrix on number multiplying:" << endl;
+    mat = mat * 2;
     mat.output();
 
     cout << "Matrix transpose:" << endl;

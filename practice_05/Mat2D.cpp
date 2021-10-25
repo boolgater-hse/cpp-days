@@ -133,25 +133,27 @@ Mat2D& Mat2D::operator=(const Mat2D& other)
     return *this;
 }
 
-Mat2D& Mat2D::operator+(const Mat2D& other)
+Mat2D Mat2D::operator+(const Mat2D& other)
 {
     if (this->n != other.n || this->m != other.m)
     {
         return *this;
     }
 
+    Mat2D temp = *this;
+
     for (size_t i = 0; i < this->n; ++i)
     {
         for (size_t j = 0; j < this->m; ++j)
         {
-            this->operator[](i)[j] = this->operator[](i)[j] + other.operator[](i)[j];
+            temp.operator[](i)[j] = temp.operator[](i)[j] + other.operator[](i)[j];
         }
     }
 
-    return *this;
+    return temp;
 }
 
-Mat2D& Mat2D::operator*(const Mat2D& other)
+Mat2D Mat2D::operator*(const Mat2D& other)
 {
     if (this->m != other.n)
     {
@@ -172,12 +174,10 @@ Mat2D& Mat2D::operator*(const Mat2D& other)
         }
     }
 
-    *this = temp;
-
-    return *this;
+    return temp;
 }
 
-Mat2D& Mat2D::operator*(const VecND& other)
+Mat2D Mat2D::operator*(const VecND& other)
 {
     if (this->n != other.getSize())
     {
@@ -190,9 +190,35 @@ Mat2D& Mat2D::operator*(const VecND& other)
         temp.operator[](i)[0] = other[i];
     }
 
-    *this = *this * temp;
+    temp = *this * temp;
 
-    return *this;
+    return temp;
+}
+
+Mat2D Mat2D::operator*(const size_t other)
+{
+    Mat2D temp = *this;
+
+    for (size_t i = 0; i < temp.n; ++i)
+    {
+        for (size_t j = 0; j < temp.m; ++j)
+        {
+            temp.operator[](i)[j] *= other;
+        }
+    }
+
+    return temp;
+}
+
+Mat2D Mat2D::operator^(const size_t pow)
+{
+    Mat2D temp = *this;
+    for (size_t iteration = 1; iteration < pow; ++iteration)
+    {
+        temp = temp * *this;
+    }
+
+    return temp;
 }
 
 Mat2D& Mat2D::transpose()
