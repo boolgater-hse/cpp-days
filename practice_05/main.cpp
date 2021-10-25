@@ -71,6 +71,9 @@ int main()
     cout << "SLAE solution for matrix and vector:" << endl;
     SLAE eqs(mat, vec);
 
+    mat.output();
+    vec.output();
+
     double* a = eqs.solveByCramersRule();
 
     for (int i = 0; i < eqs.getNumberOfRoots(); ++i)

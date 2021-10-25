@@ -299,7 +299,7 @@ int Mat2D::getRank()
     int rank = 0;
 
     bool* selectedRow = new bool[this->n];
-    double** temp = new double*[this->n];
+    double** temp = new double* [this->n];
     for (size_t i = 0; i < this->n; ++i)
     {
         temp[i] = new double[this->m];
