@@ -33,7 +33,7 @@ int main()
 
     cout << endl;
 
-    cout << "Vector on number multiplying:" << endl;
+    cout << "Multiplying vector by number" << endl;
     VecND vec_mult = vec * 3;
     vec_mult.output();
 
@@ -44,7 +44,7 @@ int main()
              {1, 6, 0}};
     mat2.output();
 
-    cout << "Matrix pow:" << endl;
+    cout << "Matrix power 3:" << endl;
     Mat2D mat_pow =
             {{5, 2, 2},
              {9, 4, 3},
@@ -60,11 +60,11 @@ int main()
     mat = mat + mat2;
     mat.output();
 
-    cout << "Matrix on matrix multiplying:" << endl;
+    cout << "Matrix multiplication:" << endl;
     mat = mat * mat2;
     mat.output();
 
-    cout << "Matrix on number multiplying:" << endl;
+    cout << "Multiplying matrix by number:" << endl;
     mat = mat * 2;
     mat.output();
 
@@ -88,7 +88,7 @@ int main()
 
     cout << endl << endl;
 
-    cout << "Vector multiple matrix:" << endl;
+    cout << "Multiplying matrix by vector:" << endl;
     mat = mat * vec;
     mat.output();
 
