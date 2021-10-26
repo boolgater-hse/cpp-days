@@ -52,6 +52,10 @@ int main()
     mat_pow = mat_pow ^ 3;
     mat_pow.output();
 
+    cout << "Inverse matrix:" << endl;
+    Mat2D mat_inv = mat.getInverse();
+    mat_inv.output();
+
     cout << "Matrix adding:" << endl;
     mat = mat + mat2;
     mat.output();

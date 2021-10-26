@@ -1,15 +1,17 @@
+#include <iostream>
+#include <iomanip>
 #include "VecND.hpp"
 
 VecND::VecND(size_t n)
 {
-    data = new size_t[n];
+    data = new long double[n];
     maxSize = n;
 }
 
 VecND::VecND(const VecND& other)
 {
     this->maxSize = other.maxSize;
-    this->data = new size_t[maxSize];
+    this->data = new long double[maxSize];
 
     for (size_t i = 0; i < other.maxSize; ++i)
     {
@@ -27,7 +29,7 @@ VecND::VecND(const std::initializer_list <int>& other) : VecND()
     }
 }
 
-size_t& VecND::operator[](size_t index) const
+long double& VecND::operator[](size_t index) const
 {
     return this->data[index];
 }
@@ -39,7 +41,7 @@ VecND& VecND::operator=(const VecND& other)
     if (this->data != nullptr && this->data != other.data)
     {
         delete[] this->data;
-        this->data = new size_t[this->maxSize];
+        this->data = new long double[this->maxSize];
     }
 
     for (size_t i = 0; i < this->maxSize; ++i)

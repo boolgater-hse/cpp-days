@@ -7,7 +7,7 @@
 class VecND
 {
 private:
-    size_t* data;
+    long double* data;
     size_t maxSize;
 public:
     VecND(size_t n = 3);
@@ -16,7 +16,7 @@ public:
 
     VecND(const std::initializer_list <int>& other);
 
-    size_t& operator[](size_t index) const;
+    long double& operator[](size_t index) const;
 
     VecND& operator=(const VecND& other);
 

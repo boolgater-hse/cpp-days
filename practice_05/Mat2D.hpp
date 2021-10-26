@@ -13,7 +13,11 @@ private:
 
     void subMatrix(const Mat2D& mat, Mat2D& temp, int p, int q, size_t _n);
 
-    int determinantOfMatrix(Mat2D& mat, size_t _n);
+    long double determinantOfMatrix(Mat2D& mat, size_t _n);
+
+    void getAdjoint(const Mat2D& mat, Mat2D& adjoint);
+
+    void getCofactor(const Mat2D& mat, Mat2D& temp, size_t p, size_t q, size_t _n);
 
 public:
     Mat2D(size_t n = 3, size_t m = 3);
@@ -46,7 +50,9 @@ public:
 
     Mat2D& transpose();
 
-    int getDeterminant();
+    long double getDeterminant();
+
+    Mat2D getInverse();
 
     int getRank();
 
