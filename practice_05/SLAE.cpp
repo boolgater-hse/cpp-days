@@ -16,12 +16,12 @@ double* SLAE::solveByCramersRule()
         answer[i] = 0;
     }
 
-    if (!checkCompatibility() || matrix.getN() != matrix.getM() || matrix.checkZeroRows())
+    if (matrix.getN() != vector.getSize() || matrix.getN() != matrix.getM() || !checkCompatibility() || matrix.checkZeroRows())
     {
         return answer;
     }
 
-    int mainDeterminant = matrix.getDeterminant();
+    long double mainDeterminant = matrix.getDeterminant();
 
     for (size_t iteration = 0; iteration < matrix.getN(); ++iteration)
     {
@@ -42,7 +42,7 @@ double* SLAE::solveByCramersRule()
     return answer;
 }
 
-size_t SLAE::getNumberOfRoots()
+size_t SLAE::getNumberOfRoots() const
 {
     return this->lastRootsN;
 }

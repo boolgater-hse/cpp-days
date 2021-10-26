@@ -15,7 +15,7 @@ public:
 
     double* solveByCramersRule();
 
-    size_t getNumberOfRoots();
+    size_t getNumberOfRoots() const;
 
     bool checkCompatibility();
 };

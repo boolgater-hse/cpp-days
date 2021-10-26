@@ -6,10 +6,16 @@ using namespace std;
 
 int main()
 {
+//    Mat2D mat =
+//            {{3, 6, 2},
+//             {4, 6, 6},
+//             {2, 6, 8}};
     Mat2D mat =
-            {{3, 6, 2},
-             {4, 6, 6},
-             {2, 6, 8}};
+            {{4, 3, 0, 4, 7},
+             {3, 2, 2, 7, 7},
+             {9, 5, 7, 5, 8},
+             {1, 1, 4, 4, 4},
+             {1, 6, 6, 4, 2}};
 
 //    mat.input();
     cout << "Matrix:" << endl;
@@ -23,7 +29,7 @@ int main()
 
     cout << endl;
 
-    VecND vec = {4, 6, 3};
+    VecND vec = {4, 6, 3, 5, 2};
 
 //    vec.input();
     cout << "Vector:" << endl;
@@ -39,17 +45,15 @@ int main()
 
     cout << "Second matrix:" << endl;
     Mat2D mat2 =
-            {{5, 2, 2},
-             {9, 3, 3},
-             {1, 6, 0}};
+            {{3, 7, 9, 6, 3},
+             {6, 5, 6, 2, 4},
+             {6, 1, 8, 9, 2},
+             {8, 7, 3, 1, 6},
+             {4, 8, 4, 8, 5}};
     mat2.output();
 
     cout << "Matrix power 3:" << endl;
-    Mat2D mat_pow =
-            {{5, 2, 2},
-             {9, 4, 3},
-             {1, 2, 9}};
-    mat_pow = mat_pow ^ 3;
+    Mat2D mat_pow = mat ^ 3;
     mat_pow.output();
 
     cout << "Inverse matrix:" << endl;
