@@ -2,8 +2,6 @@
 #include "Mat2D.hpp"
 #include "SLAE.hpp"
 
-using namespace std;
-
 int main()
 {
 //    Mat2D mat =
@@ -18,32 +16,32 @@ int main()
              {1, 6, 6, 4, 2}};
 
 //    mat.input();
-    cout << "Matrix:" << endl;
+    std::cout << "Matrix:" << std::endl;
     mat.output();
 
-    cout << "Rows num: " << mat.getN() << endl;
-    cout << "Cols num: " << mat.getM() << endl;
-    cout << "Det: " << mat.getDeterminant() << endl;
-    cout << "Rank: " << mat.getRank() << endl;
-    cout << "Zero rows? " << mat.checkZeroRows() << endl;
+    std::cout << "Rows num: " << mat.getN() << std::endl;
+    std::cout << "Cols num: " << mat.getM() << std::endl;
+    std::cout << "Det: " << mat.getDeterminant() << std::endl;
+    std::cout << "Rank: " << mat.getRank() << std::endl;
+    std::cout << "Zero rows? " << mat.checkZeroRows() << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
 
     VecND vec = {4, 6, 3, 5, 2};
 
 //    vec.input();
-    cout << "Vector:" << endl;
+    std::cout << "Vector:" << std::endl;
     vec.output();
 
-    cout << "Vector size: " << vec.getSize() << endl;
+    std::cout << "Vector size: " << vec.getSize() << std::endl;
 
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << "Multiplying vector by number" << endl;
+    std::cout << "Multiplying vector by number" << std::endl;
     VecND vec_mult = vec * 3;
     vec_mult.output();
 
-    cout << "Second matrix:" << endl;
+    std::cout << "Second matrix:" << std::endl;
     Mat2D mat2 =
             {{3, 7, 9, 6, 3},
              {6, 5, 6, 2, 4},
@@ -52,31 +50,31 @@ int main()
              {4, 8, 4, 8, 5}};
     mat2.output();
 
-    cout << "Matrix power 3:" << endl;
+    std::cout << "Matrix power 3:" << std::endl;
     Mat2D mat_pow = mat ^ 3;
     mat_pow.output();
 
-    cout << "Inverse matrix:" << endl;
+    std::cout << "Inverse matrix:" << std::endl;
     Mat2D mat_inv = mat.getInverse();
     mat_inv.output();
 
-    cout << "Matrix adding:" << endl;
+    std::cout << "Matrix adding:" << std::endl;
     mat = mat + mat2;
     mat.output();
 
-    cout << "Matrix multiplication:" << endl;
+    std::cout << "Matrix multiplication:" << std::endl;
     mat = mat * mat2;
     mat.output();
 
-    cout << "Multiplying matrix by number:" << endl;
+    std::cout << "Multiplying matrix by number:" << std::endl;
     mat = mat * 2;
     mat.output();
 
-    cout << "Matrix transpose:" << endl;
+    std::cout << "Matrix transpose:" << std::endl;
     mat = mat.transpose();
     mat.output();
 
-    cout << "SLAE solution for matrix and vector:" << endl;
+    std::cout << "SLAE solution for matrix and vector:" << std::endl;
     SLAE eqs(mat, vec);
 
     mat.output();
@@ -86,17 +84,17 @@ int main()
 
     for (int i = 0; i < eqs.getNumberOfRoots(); ++i)
     {
-        cout << a[i] << ' ';
+        std::cout << a[i] << ' ';
     }
     delete[] a;
 
-    cout << endl << endl;
+    std::cout << std::endl << std::endl;
 
-    cout << "Multiplying matrix by vector:" << endl;
+    std::cout << "Multiplying matrix by vector:" << std::endl;
     mat = mat * vec;
     mat.output();
 
-    cout << "Done";
+    std::cout << "Done";
 
     return 0;
 }
