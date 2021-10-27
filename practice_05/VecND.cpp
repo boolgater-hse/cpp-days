@@ -19,7 +19,7 @@ VecND::VecND(const VecND& other)
     }
 }
 
-VecND::VecND(const std::initializer_list <int>& other) : VecND()
+VecND::VecND(const std::initializer_list <long double>& other) : VecND()
 {
     *this = VecND(other.size());
 

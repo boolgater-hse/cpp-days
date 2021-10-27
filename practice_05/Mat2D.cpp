@@ -33,7 +33,7 @@ Mat2D::Mat2D(const Mat2D& other)
     }
 }
 
-Mat2D::Mat2D(const std::initializer_list <std::initializer_list <int>>& other) : Mat2D()
+Mat2D::Mat2D(const std::initializer_list <std::initializer_list <long double>>& other) : Mat2D()
 {
     size_t _n = other.size();
     size_t _m = 0;
