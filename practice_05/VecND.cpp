@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "VecND.hpp"
 
 VecND::VecND(size_t n)
@@ -69,7 +68,6 @@ size_t VecND::getSize() const
     return this->maxSize;
 }
 
-
 void VecND::input()
 {
     std::cin >> this->maxSize;
@@ -82,7 +80,6 @@ void VecND::input()
     }
 }
 
-
 void VecND::output()
 {
     for (int i = 0; i < this->maxSize; ++i)
@@ -91,7 +88,6 @@ void VecND::output()
     }
     std::cout << std::endl << std::endl;
 }
-
 
 VecND::~VecND()
 {

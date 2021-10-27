@@ -14,7 +14,7 @@ public:
 
     VecND(const VecND& other);
 
-    VecND(const std::initializer_list <int>& other);
+    VecND(const std::initializer_list <long double>& other);
 
     long double& operator[](size_t index) const;
 

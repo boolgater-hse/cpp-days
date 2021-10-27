@@ -24,7 +24,7 @@ public:
 
     Mat2D(const Mat2D& other);
 
-    Mat2D(const std::initializer_list <std::initializer_list <int>>& other);
+    Mat2D(const std::initializer_list <std::initializer_list <long double>>& other);
 
     size_t getN() const;
 
