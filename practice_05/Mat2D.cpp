@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include "Mat2D.hpp"
 
 Mat2D::Mat2D(const size_t n, const size_t m)
