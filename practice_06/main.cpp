@@ -1,8 +1,8 @@
 #include <iostream>
-#include "include/DynArray.hpp"
-#include "include/Queue.hpp"
-#include "include/Mat2D.hpp"
-#include "include/SLAE.hpp"
+#include "DynArray.hpp"
+#include "Queue.hpp"
+#include "Mat2D.hpp"
+#include "SLAE.hpp"
 
 void DynArray_TestSuite();
 void Queue_TestSuite();

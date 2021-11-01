@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/VecND.hpp"
+#include "VecND.hpp"
 
 template <typename T>
 VecND <T>::VecND(size_t n)

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Mat2D.hpp"
+#include "Mat2D.hpp"
 
 template <typename T>
 Mat2D <T>::Mat2D(size_t n, size_t m)

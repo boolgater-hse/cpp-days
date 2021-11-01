@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/DynArray.hpp"
+#include "DynArray.hpp"
 
 template <typename T>
 size_t DynArray <T>::alive = 0;

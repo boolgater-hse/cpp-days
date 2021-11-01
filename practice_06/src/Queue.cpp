@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/Queue.hpp"
+#include "Queue.hpp"
 
 template <typename T>
 Queue <T>::Queue() {}

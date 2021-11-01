@@ -1,5 +1,5 @@
-#include "../include/Mat2D.hpp"
-#include "../include/SLAE.hpp"
+#include "Mat2D.hpp"
+#include "SLAE.hpp"
 
 template <typename T>
 SLAE <T>::SLAE(const Mat2D <T>& _matrix, const VecND <T>& _vector)
