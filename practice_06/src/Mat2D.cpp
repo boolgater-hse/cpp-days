@@ -137,8 +137,6 @@ Mat2D <T>& Mat2D <T>::operator=(const Mat2D& other)
 
     this->data = other.data;
 
-
-    // TODO: Check
     for (size_t i = 0; i < other.n; ++i)
     {
         for (size_t j = 0; j < other.m; ++j)
@@ -459,14 +457,35 @@ int Mat2D <T>::getRank()
     return rank;
 }
 
-template class Mat2D <short int>;
-template class Mat2D <unsigned short int>;
-template class Mat2D <unsigned int>;
-template class Mat2D <int>;
-template class Mat2D <unsigned long int>;
-template class Mat2D <long int>;
-template class Mat2D <unsigned long long int>;
-template class Mat2D <long long int>;
-template class Mat2D <float>;
-template class Mat2D <double>;
-template class Mat2D <long double>;
+template
+class Mat2D <short int>;
+
+template
+class Mat2D <unsigned short int>;
+
+template
+class Mat2D <unsigned int>;
+
+template
+class Mat2D <int>;
+
+template
+class Mat2D <unsigned long int>;
+
+template
+class Mat2D <long int>;
+
+template
+class Mat2D <unsigned long long int>;
+
+template
+class Mat2D <long long int>;
+
+template
+class Mat2D <float>;
+
+template
+class Mat2D <double>;
+
+template
+class Mat2D <long double>;

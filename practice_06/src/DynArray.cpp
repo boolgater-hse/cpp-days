@@ -115,17 +115,44 @@ DynArray <T> DynArray <T>::operator>>(size_t d)
     return temp;
 }
 
-template class DynArray <short int>;
-template class DynArray <unsigned short int>;
-template class DynArray <unsigned int>;
-template class DynArray <int>;
-template class DynArray <unsigned long int>;
-template class DynArray <long int>;
-template class DynArray <unsigned long long int>;
-template class DynArray <unsigned char>;
-template class DynArray <signed char>;
-template class DynArray <char>;
-template class DynArray <long long int>;
-template class DynArray <float>;
-template class DynArray <double>;
-template class DynArray <long double>;
+template
+class DynArray <short int>;
+
+template
+class DynArray <unsigned short int>;
+
+template
+class DynArray <unsigned int>;
+
+template
+class DynArray <int>;
+
+template
+class DynArray <unsigned long int>;
+
+template
+class DynArray <long int>;
+
+template
+class DynArray <unsigned long long int>;
+
+template
+class DynArray <unsigned char>;
+
+template
+class DynArray <signed char>;
+
+template
+class DynArray <char>;
+
+template
+class DynArray <long long int>;
+
+template
+class DynArray <float>;
+
+template
+class DynArray <double>;
+
+template
+class DynArray <long double>;

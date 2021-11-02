@@ -88,14 +88,35 @@ void VecND <T>::output()
     std::cout << std::endl << std::endl;
 }
 
-template class VecND <short int>;
-template class VecND <unsigned short int>;
-template class VecND <unsigned int>;
-template class VecND <int>;
-template class VecND <unsigned long int>;
-template class VecND <long int>;
-template class VecND <unsigned long long int>;
-template class VecND <long long int>;
-template class VecND <float>;
-template class VecND <double>;
-template class VecND <long double>;
+template
+class VecND <short int>;
+
+template
+class VecND <unsigned short int>;
+
+template
+class VecND <unsigned int>;
+
+template
+class VecND <int>;
+
+template
+class VecND <unsigned long int>;
+
+template
+class VecND <long int>;
+
+template
+class VecND <unsigned long long int>;
+
+template
+class VecND <long long int>;
+
+template
+class VecND <float>;
+
+template
+class VecND <double>;
+
+template
+class VecND <long double>;

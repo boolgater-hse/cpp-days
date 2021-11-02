@@ -4,7 +4,6 @@ project(practice_06)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
 
-
 include_directories(include)
 
 set(SOURCE_FILES src/DynArray.cpp src/Queue.cpp src/VecND.cpp src/Mat2D.cpp src/SLAE.cpp)

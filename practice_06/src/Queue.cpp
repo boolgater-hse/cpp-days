@@ -2,7 +2,9 @@
 #include "Queue.hpp"
 
 template <typename T>
-Queue <T>::Queue() {}
+Queue <T>::Queue()
+{
+}
 
 template <typename T>
 void Queue <T>::output()
@@ -60,16 +62,41 @@ size_t Queue <T>::getSize()
     return this->data.size();
 }
 
-template class Queue <short int>;
-template class Queue <unsigned short int>;
-template class Queue <unsigned int>;
-template class Queue <int>;
-template class Queue <unsigned long int>;
-template class Queue <long int>;
-template class Queue <unsigned long long int>;
-template class Queue <unsigned char>;
-template class Queue <signed char>;
-template class Queue <long long int>;
-template class Queue <float>;
-template class Queue <double>;
-template class Queue <long double>;
+template
+class Queue <short int>;
+
+template
+class Queue <unsigned short int>;
+
+template
+class Queue <unsigned int>;
+
+template
+class Queue <int>;
+
+template
+class Queue <unsigned long int>;
+
+template
+class Queue <long int>;
+
+template
+class Queue <unsigned long long int>;
+
+template
+class Queue <unsigned char>;
+
+template
+class Queue <signed char>;
+
+template
+class Queue <long long int>;
+
+template
+class Queue <float>;
+
+template
+class Queue <double>;
+
+template
+class Queue <long double>;

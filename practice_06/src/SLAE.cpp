@@ -71,14 +71,35 @@ bool SLAE <T>::checkCompatibility()
     return false;
 }
 
-template class SLAE <short int>;
-template class SLAE <unsigned short int>;
-template class SLAE <unsigned int>;
-template class SLAE <int>;
-template class SLAE <unsigned long int>;
-template class SLAE <long int>;
-template class SLAE <unsigned long long int>;
-template class SLAE <long long int>;
-template class SLAE <float>;
-template class SLAE <double>;
-template class SLAE <long double>;
+template
+class SLAE <short int>;
+
+template
+class SLAE <unsigned short int>;
+
+template
+class SLAE <unsigned int>;
+
+template
+class SLAE <int>;
+
+template
+class SLAE <unsigned long int>;
+
+template
+class SLAE <long int>;
+
+template
+class SLAE <unsigned long long int>;
+
+template
+class SLAE <long long int>;
+
+template
+class SLAE <float>;
+
+template
+class SLAE <double>;
+
+template
+class SLAE <long double>;

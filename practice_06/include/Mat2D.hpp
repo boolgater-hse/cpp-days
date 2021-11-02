@@ -18,6 +18,7 @@ private:
     void getAdjoint(const Mat2D <T>& mat, Mat2D <T>& adjoint);
 
     void getCofactor(const Mat2D <T>& mat, Mat2D <T>& temp, size_t p, size_t q, size_t _n);
+
 public:
     Mat2D(size_t n = 3, size_t m = 3);
 

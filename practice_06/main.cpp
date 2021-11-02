@@ -5,7 +5,9 @@
 #include "SLAE.hpp"
 
 void DynArray_TestSuite();
+
 void Queue_TestSuite();
+
 void Mat2D_SLAE_TestSuite();
 
 int main()
