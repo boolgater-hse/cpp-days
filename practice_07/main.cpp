@@ -20,7 +20,7 @@ bool isPalindrome(std::string& s)
     return true;
 }
 
-std::string sortByLengthWithSort(std::string& s)
+std::string sortByLengthWithSort(std::string s)
 {
     using VectorIterator = std::vector <std::string>::iterator;
 
