@@ -82,7 +82,7 @@ std::string sortByLengthWithSort(std::string s)
 int main()
 {
     std::string s;
-    std::getline(std::cin >> std::ws, s);
+    std::getline(std::cin, s);
     std::cout << "Initial string: " << s << '\n';
     std::cout << "Is palindrome: " << (isPalindrome(s) ? "True" : "False") << '\n';
     std::cout << std::endl;
