@@ -5,6 +5,7 @@
 #include "MyLinkedList.hpp"
 
 void VectorTask_TestSuite();
+
 void MyLinkedList_TestSuite();
 
 int main()
@@ -47,7 +48,7 @@ void MyLinkedList_TestSuite()
 {
     std::cout << "Default ctor creates one element -> ";
     MyLinkedList <int> llist_one;
-    for (auto& it : llist_one)
+    for (auto& it: llist_one)
     {
         std::cout << it << ' ';
     }
@@ -55,7 +56,7 @@ void MyLinkedList_TestSuite()
 
     std::cout << "Defined number of elements ctor -> ";
     MyLinkedList <int> llist(5);
-    for (auto& it : llist)
+    for (auto& it: llist)
     {
         std::cout << it << ' ';
     }
@@ -63,7 +64,7 @@ void MyLinkedList_TestSuite()
 
     std::cout << "Defined number of elements and value ctor -> ";
     MyLinkedList <int> llist_custom_value(5, 10);
-    for (auto& it : llist_custom_value)
+    for (auto& it: llist_custom_value)
     {
         std::cout << it << ' ';
     }
@@ -72,7 +73,7 @@ void MyLinkedList_TestSuite()
     std::cout << "std::string initialization -> ";
     std::string txt = "looks_like_a_std::string_initialization";
     MyLinkedList <char> llist_string = txt;
-    for (auto& it : llist_string)
+    for (auto& it: llist_string)
     {
         std::cout << it;
     }
@@ -81,7 +82,7 @@ void MyLinkedList_TestSuite()
     std::cout << "std::string equating -> ";
     std::string txt2 = "yet_another_std::string";
     llist_string = txt2;
-    for (auto& it : llist_string)
+    for (auto& it: llist_string)
     {
         std::cout << it;
     }
@@ -89,7 +90,7 @@ void MyLinkedList_TestSuite()
 
     std::cout << "std::initializer_list initialization -> ";
     MyLinkedList <int> llist_initializer_list = {1, 2, 3, 4, 5};
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
@@ -98,7 +99,7 @@ void MyLinkedList_TestSuite()
 
     std::cout << "Push front:\n";
     llist_initializer_list.pushFront(20);
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
@@ -106,14 +107,14 @@ void MyLinkedList_TestSuite()
     std::cout << "Pop front:\n";
     std::cout << "Popped element is " << llist_initializer_list.popFront() << '\n';
     std::cout << "Current state:\n";
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
     std::cout << '\n';
     std::cout << "Push back:\n";
     llist_initializer_list.pushBack(30);
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
@@ -121,7 +122,7 @@ void MyLinkedList_TestSuite()
     std::cout << "Pop back:\n";
     std::cout << "Popped element is " << llist_initializer_list.popBack() << '\n';
     std::cout << "Current state:\n";
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
@@ -138,7 +139,7 @@ void MyLinkedList_TestSuite()
     std::cout << '\n';
 
     std::cout << "range-based for:\n";
-    for (auto& it : llist_initializer_list)
+    for (auto& it: llist_initializer_list)
     {
         std::cout << it << ' ';
     }
