@@ -23,7 +23,7 @@ void VectorTask_TestSuite()
     srand(time(nullptr));
     for (int i = 0; i < 10; ++i)
     {
-        a.push_back(rand() % 10);
+        a.push_back(rand() % 5);
     }
 
     std::cout << "Init vector:\n";

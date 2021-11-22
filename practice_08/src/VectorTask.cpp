@@ -8,12 +8,12 @@ void equalizeSizeAndCapacity(std::vector <int>& vec)
 
 void removeZeroes(std::vector <int>& vec)
 {
-    for (auto it = vec.begin(); it != vec.end(); ++it)
+    for (size_t i = 0; i < vec.size(); ++i)
     {
-        if (*it == 0)
+        if (vec[i] == 0)
         {
-            vec.erase(it);
-            it--;
+            vec.erase(vec.begin() + i);
+            i--;
         }
     }
 }

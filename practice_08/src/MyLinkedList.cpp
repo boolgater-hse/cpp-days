@@ -306,38 +306,38 @@ bool MyLinkedList <T>::Iterator::operator!=(Node* other)
     return this->iNode != other;
 }
 
-//template
-//class MyLinkedList <short int>;
-//
-//template
-//class MyLinkedList <unsigned short int>;
-//
-//template
-//class MyLinkedList <unsigned int>;
+template
+class MyLinkedList <short int>;
+
+template
+class MyLinkedList <unsigned short int>;
+
+template
+class MyLinkedList <unsigned int>;
 
 template
 class MyLinkedList <int>;
 
-//template
-//class MyLinkedList <unsigned long int>;
-//
-//template
-//class MyLinkedList <long int>;
-//
-//template
-//class MyLinkedList <unsigned long long int>;
-//
-//template
-//class MyLinkedList <long long int>;
-//
-//template
-//class MyLinkedList <float>;
-//
-//template
-//class MyLinkedList <double>;
-//
-//template
-//class MyLinkedList <long double>;
+template
+class MyLinkedList <unsigned long int>;
+
+template
+class MyLinkedList <long int>;
+
+template
+class MyLinkedList <unsigned long long int>;
+
+template
+class MyLinkedList <long long int>;
+
+template
+class MyLinkedList <float>;
+
+template
+class MyLinkedList <double>;
+
+template
+class MyLinkedList <long double>;
 
 template
 class MyLinkedList <char>;
