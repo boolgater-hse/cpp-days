@@ -22,9 +22,13 @@ public:
 
     MyLinkedList(size_t n, T val);
 
+    MyLinkedList(const MyLinkedList <T>& other);
+
     MyLinkedList(const std::initializer_list <T>& other);
 
     MyLinkedList(const std::string& other);
+
+    MyLinkedList <T>& operator=(const MyLinkedList <T>& other);
 
     MyLinkedList <char>& operator=(const std::string& other);
 

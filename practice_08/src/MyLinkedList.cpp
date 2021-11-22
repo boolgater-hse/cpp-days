@@ -40,6 +40,20 @@ MyLinkedList <T>::MyLinkedList(size_t n, T val)
 }
 
 template <typename T>
+MyLinkedList <T>::MyLinkedList(const MyLinkedList <T>& other) : MyLinkedList()
+{
+    this->first->val = other.first->val;
+
+    Node* start = other.first->next;
+
+    while (start)
+    {
+        this->pushFront(start->val);
+        start = start->next;
+    }
+}
+
+template <typename T>
 MyLinkedList <T>::MyLinkedList(const std::initializer_list <T>& other)
 {
     if (other.size() == 0)
@@ -77,18 +91,46 @@ MyLinkedList <char>::MyLinkedList(const std::string& other) : MyLinkedList()
     size = other.size();
 }
 
+template <typename T>
+MyLinkedList <T>& MyLinkedList <T>::operator=(const MyLinkedList <T>& other)
+{
+    Node* ptr = first;
+
+    while (ptr)
+    {
+        Node* temp = ptr->next;
+        delete ptr;
+
+        ptr = temp;
+    }
+
+    first = new Node();
+    Node* start = other.first;
+    first->val = start->val;
+    start = start->next;
+    last = first;
+    while (start)
+    {
+        this->pushFront(start->val);
+        start = start->next;
+    }
+    size = other.size;
+
+    return *this;
+}
+
+
 template <>
 MyLinkedList <char>& MyLinkedList <char>::operator=(const std::string& other)
 {
-    Node* slow = first;
-    Node* fast = first->next;
+    Node* ptr = first;
 
-    while (fast)
+    while (ptr)
     {
-        slow = fast;
-        fast = fast->next;
+        Node* temp = ptr->next;
+        delete ptr;
 
-        delete slow;
+        ptr = temp;
     }
 
     first = new Node();
@@ -264,38 +306,38 @@ bool MyLinkedList <T>::Iterator::operator!=(Node* other)
     return this->iNode != other;
 }
 
-template
-class MyLinkedList <short int>;
-
-template
-class MyLinkedList <unsigned short int>;
-
-template
-class MyLinkedList <unsigned int>;
+//template
+//class MyLinkedList <short int>;
+//
+//template
+//class MyLinkedList <unsigned short int>;
+//
+//template
+//class MyLinkedList <unsigned int>;
 
 template
 class MyLinkedList <int>;
 
-template
-class MyLinkedList <unsigned long int>;
-
-template
-class MyLinkedList <long int>;
-
-template
-class MyLinkedList <unsigned long long int>;
-
-template
-class MyLinkedList <long long int>;
-
-template
-class MyLinkedList <float>;
-
-template
-class MyLinkedList <double>;
-
-template
-class MyLinkedList <long double>;
+//template
+//class MyLinkedList <unsigned long int>;
+//
+//template
+//class MyLinkedList <long int>;
+//
+//template
+//class MyLinkedList <unsigned long long int>;
+//
+//template
+//class MyLinkedList <long long int>;
+//
+//template
+//class MyLinkedList <float>;
+//
+//template
+//class MyLinkedList <double>;
+//
+//template
+//class MyLinkedList <long double>;
 
 template
 class MyLinkedList <char>;

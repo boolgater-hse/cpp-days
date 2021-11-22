@@ -70,6 +70,23 @@ void MyLinkedList_TestSuite()
     }
     std::cout << '\n';
 
+    std::cout << "Copy ctor -> ";
+    MyLinkedList <int> llist_copy(llist_custom_value);
+    for (auto& it: llist_copy)
+    {
+        std::cout << it << ' ';
+    }
+    std::cout << '\n';
+
+    std::cout << "Equating -> ";
+    MyLinkedList <int> llist_equ;
+    llist_equ = llist_custom_value;
+    for (auto& it: llist_equ)
+    {
+        std::cout << it << ' ';
+    }
+    std::cout << '\n';
+
     std::cout << "std::string initialization -> ";
     std::string txt = "looks_like_a_std::string_initialization";
     MyLinkedList <char> llist_string = txt;
