@@ -131,6 +131,10 @@ void MyLinkedList_TestSuite()
     std::cout << '\n';
 
     std::cout << "Iterator class\n";
+    MyLinkedList <int>::Iterator b = llist_initializer_list.begin();
+    std::cout << "begin iterator: " << *b << '\n';
+    std::cout << "Iterator plus 3: " << *(b + 3) << '\n';
+    std::cout << "Iterator overflow: " << *(b + 42) << '\n';
     std::cout << "for with iterators:\n";
     for (MyLinkedList <int>::Iterator it = llist_initializer_list.begin(); it != llist_initializer_list.end(); ++it)
     {

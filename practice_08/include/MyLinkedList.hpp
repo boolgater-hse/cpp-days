@@ -55,6 +55,8 @@ public:
 
         Iterator& operator++(int);
 
+        Iterator& operator+(int shift);
+
         T& operator*();
 
         bool operator==(Iterator other);

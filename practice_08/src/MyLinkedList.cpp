@@ -221,6 +221,20 @@ typename MyLinkedList <T>::Iterator& MyLinkedList <T>::Iterator::operator++(int)
 }
 
 template <typename T>
+typename MyLinkedList <T>::Iterator& MyLinkedList <T>::Iterator::operator+(int shift)
+{
+    int count = 0;
+
+    while (iNode->next && count != shift)
+    {
+        iNode = iNode->next;
+        count++;
+    }
+
+    return *this;
+}
+
+template <typename T>
 T& MyLinkedList <T>::Iterator::operator*()
 {
     return this->iNode->val;
