@@ -1,4 +1,5 @@
 #include <string>
+#include <variant>
 #include "MyLinkedList.hpp"
 
 template <typename T>
@@ -73,10 +74,10 @@ MyLinkedList <T>::MyLinkedList(const std::initializer_list <T>& other)
     size = other.size();
 }
 
-template <>
-MyLinkedList <char>::MyLinkedList(const std::string& other) : MyLinkedList()
+template <typename T>
+MyLinkedList <T>::MyLinkedList(const std::string& other) : MyLinkedList()
 {
-    if (other.empty())
+    if (other.empty() || !(std::is_same <T, char>::value))
     {
         return;
     }
@@ -94,27 +95,60 @@ MyLinkedList <char>::MyLinkedList(const std::string& other) : MyLinkedList()
 template <typename T>
 MyLinkedList <T>& MyLinkedList <T>::operator=(const MyLinkedList <T>& other)
 {
-    Node* ptr = first;
-
-    while (ptr)
+    if (other.size > size)
     {
-        Node* temp = ptr->next;
-        delete ptr;
+        Node* currentPtr = first;
+        Node* otherPtr = other.first;
 
-        ptr = temp;
+        while (currentPtr != nullptr)
+        {
+            currentPtr->val = otherPtr->val;
+            currentPtr = currentPtr->next;
+            otherPtr = otherPtr->next;
+        }
+
+        while (otherPtr != nullptr)
+        {
+            this->pushFront(otherPtr->val);
+            otherPtr = otherPtr->next;
+        }
     }
-
-    first = new Node();
-    Node* start = other.first;
-    first->val = start->val;
-    start = start->next;
-    last = first;
-    while (start)
+    else if (other.size < size)
     {
-        this->pushFront(start->val);
-        start = start->next;
+        Node* currentPtr = first;
+        Node* otherPtr = other.first;
+
+        while (otherPtr->next != nullptr)
+        {
+            currentPtr->val = otherPtr->val;
+            currentPtr = currentPtr->next;
+            otherPtr = otherPtr->next;
+        }
+        currentPtr->val = otherPtr->val;
+        last = currentPtr;
+        otherPtr = currentPtr->next;
+        currentPtr->next = nullptr;
+
+        while (otherPtr != nullptr)
+        {
+            Node* temp = otherPtr->next;
+            delete otherPtr;
+
+            otherPtr = temp;
+        }
     }
-    size = other.size;
+    else
+    {
+        Node* currentPtr = first;
+        Node* otherPtr = other.first;
+
+        while (currentPtr != nullptr)
+        {
+            currentPtr->val = otherPtr->val;
+            currentPtr = currentPtr->next;
+            otherPtr = otherPtr->next;
+        }
+    }
 
     return *this;
 }
@@ -125,7 +159,7 @@ MyLinkedList <char>& MyLinkedList <char>::operator=(const std::string& other)
 {
     Node* ptr = first;
 
-    while (ptr)
+    while (ptr != nullptr)
     {
         Node* temp = ptr->next;
         delete ptr;
@@ -150,7 +184,7 @@ MyLinkedList <T>::~MyLinkedList()
 {
     Node* ptr = first;
 
-    while (ptr)
+    while (ptr != nullptr)
     {
         Node* temp = ptr->next;
         delete ptr;
