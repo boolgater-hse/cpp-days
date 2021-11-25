@@ -48,9 +48,9 @@ public:
 
     class Iterator
     {
-    private:
-        Node* iNode;
     public:
+        Node* iNode;
+
         Iterator();
 
         Iterator(Node* other);
@@ -75,6 +75,8 @@ public:
     Iterator begin();
 
     Iterator end();
+
+    void insert(size_t place, T val);
 };
 
 

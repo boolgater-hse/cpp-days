@@ -271,6 +271,29 @@ typename MyLinkedList <T>::Iterator MyLinkedList <T>::end()
 }
 
 template <typename T>
+void MyLinkedList <T>::insert(size_t place, T val)
+{
+    if (place == 0)
+    {
+        this->pushBack(val);
+    }
+    else if (place == this->size)
+    {
+        this->pushFront(val);
+    }
+    else
+    {
+        Iterator position = this->begin() + (place - 1);
+
+        Node* toInsert = new Node();
+        toInsert->val = val;
+        toInsert->next = position.iNode->next;
+
+        position.iNode->next = toInsert;
+    }
+}
+
+template <typename T>
 MyLinkedList <T>::Iterator::Iterator()
 {
     iNode = nullptr;
