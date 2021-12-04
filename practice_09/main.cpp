@@ -12,7 +12,9 @@ int main()
     Vector_TestSuite();
     std::cout << std::endl;
     MyLinkedList_TestSuite();
+    std::cout << std::endl;
 
+    std::cout << "Galton board:" << '\n';
     std::vector <int> resultGalton;
     resultGalton = runGaltonBoard(0.5, -1, 14, 15);
     for (int i: resultGalton)
@@ -30,9 +32,9 @@ int main()
               << std::distance(resultGalton.begin(), std::min_element(resultGalton.begin(), resultGalton.end()))
               << " equal "
               << resultGalton[std::distance(resultGalton.begin(),
-                                            std::min_element(resultGalton.begin(), resultGalton.end()))] << '\n';
+                                            std::min_element(resultGalton.begin(), resultGalton.end()))] << "\n\n";
 
-    std::cout << '\n';
+    std::cout << "std::normal_distribution board:" << '\n';
 
     std::random_device rd{};
     std::mt19937 gen{rd()};
