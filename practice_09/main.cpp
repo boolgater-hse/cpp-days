@@ -6,13 +6,12 @@
 #include "VectorTest.hpp"
 #include "MyLinkedListTest.hpp"
 #include "Distributions.hpp"
-// TODO: Galton board
 
 int main()
 {
-//    Vector_TestSuite();
-//    std::cout << std::endl;
-//    MyLinkedList_TestSuite();
+    Vector_TestSuite();
+    std::cout << std::endl;
+    MyLinkedList_TestSuite();
 
     std::vector <int> resultGalton;
     resultGalton = runGaltonBoard(0.5, -1, 14, 15);
