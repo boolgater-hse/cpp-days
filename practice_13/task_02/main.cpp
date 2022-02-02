@@ -6,33 +6,30 @@
 
 const int INF = 100000000;
 
-std::vector <int> dijkstra(const std::vector <std::vector <std::pair <int, int>>>& g, int start)
+std::vector <int> dijkstra(std::vector <std::vector <int>> g, int start)
 {
-    std::priority_queue <std::pair <int, int>, std::vector <std::pair <int, int>>, std::greater <std::pair <int, int>>> q;
-    std::vector <int> distance(g.size(), INF);
+    std::vector <int> d(g.size(), INF);
+    d[start] = 0;
 
-    q.push(std::make_pair(0, start));
-    distance[start] = 0;
+    std::priority_queue <int, std::vector <int>, std::greater <int>> q;
+    q.push(start);
 
     while (!q.empty())
     {
-        int current = q.top().second;
+        int current = q.top();
         q.pop();
 
-        for (auto i = g[current].begin(); i != g[current].end(); ++i)
+        for (int i = 0; i < g[current].size(); ++i)
         {
-            int to = (*i).first;
-            int weight = (*i).second;
-
-            if (distance[to] > distance[current] + weight)
+            if (d[i] > d[current] + g[current][i])
             {
-                distance[to] = distance[current] + weight;
-                q.push(std::make_pair(distance[to], to));
+                d[i] = d[current] + g[current][i];
+                q.push(i);
             }
         }
     }
 
-    return distance;
+    return d;
 }
 
 int main()
@@ -44,14 +41,14 @@ int main()
     {
         int n, m;
         std::cin >> n >> m;
-        std::vector <std::vector <std::pair <int, int>>> g(n);
+        std::vector <std::vector <int>> g(n, std::vector <int>(n, INF));
 
         while (m--)
         {
             int a, b;
             std::cin >> a >> b;
-            g[a - 1].push_back(std::make_pair(b - 1, 6));
-            g[b - 1].push_back(std::make_pair(a - 1, 6));
+            g[a - 1][b - 1] = 6;
+            g[b - 1][a - 1] = 6;
         }
 
         int from;
