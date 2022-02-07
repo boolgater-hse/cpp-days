@@ -8,8 +8,6 @@
 #include "Triangle.hpp"
 #include "Shape.hpp"
 
-size_t Shape::counter = 0;
-
 template <typename T>
 T& checkInput(T& value)
 {

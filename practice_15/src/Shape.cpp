@@ -14,3 +14,5 @@ size_t Shape::getId()
 Shape::~Shape()
 {
 }
+
+size_t Shape::counter = 0;
