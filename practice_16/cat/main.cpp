@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include <iomanip>
 
 size_t lineCounter = 1;
@@ -78,12 +79,10 @@ void applyFlags(std::string& buffer)
 
 void infiniteInput()
 {
-    while (true)
+    std::string buffer;
+    while (getline(std::cin, buffer))
     {
-        std::string buffer;
-        getline(std::cin, buffer);
         buffer += '\n';
-
         applyFlags(buffer);
 
         std::cout << buffer;
@@ -274,6 +273,8 @@ int main(int argc, char* argv[])
             if (i == "-")
             {
                 infiniteInput();
+
+                return 0;
             }
 
             std::fstream file;
