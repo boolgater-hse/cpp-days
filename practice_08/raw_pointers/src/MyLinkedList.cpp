@@ -7,6 +7,8 @@ MyLinkedList <T>::MyLinkedList(size_t n)
 {
     if (n == 0)
     {
+        first = nullptr;
+        last = nullptr;
         return;
     }
 
@@ -196,27 +198,49 @@ MyLinkedList <T>::~MyLinkedList()
 template <typename T>
 void MyLinkedList <T>::pushFront(T val)
 {
-    last->next = new Node();
-    last = last->next;
-    last->val = val;
+    Node* node = new Node();
+    node->val = val;
+    node->next = nullptr;
+    if (last == nullptr)
+    {
+        first = last = node;
+    }
+    else
+    {
+        last->next = node;
+        last = node;
+    }
     size++;
 }
 
 template <typename T>
 T MyLinkedList <T>::popFront()
 {
-    Node* newFront = first;
-
-    size_t current = 0;
-    while (current < size - 2)
+    if (first == nullptr)
     {
-        newFront = newFront->next;
-        current++;
+        return 0;
     }
 
-    last = newFront;
-    T out = newFront->next->val;
-    newFront->next = nullptr;
+    T out = 0;
+
+    if (first == last)
+    {
+        first = last = nullptr;
+    }
+    else
+    {
+        Node* ptr = new Node();
+        ptr = first;
+
+        while (ptr->next->next != nullptr)
+        {
+            ptr = ptr->next;
+        }
+
+        out = ptr->next->val;
+        ptr->next = nullptr;
+        last = ptr;
+    }
     size--;
 
     return out;
@@ -225,19 +249,34 @@ T MyLinkedList <T>::popFront()
 template <typename T>
 void MyLinkedList <T>::pushBack(T val)
 {
-    Node* newBack = new Node();
+    Node* node = new Node();
 
-    newBack->val = val;
-    newBack->next = first;
-    first = newBack;
+    node->next = first;
+    node->val = val;
+    first = node;
+    if (last == nullptr)
+    {
+        last = first;
+    }
     size++;
 }
 
 template <typename T>
 T MyLinkedList <T>::popBack()
 {
-    T out = first->val;
+    if (first == nullptr)
+    {
+        return 0;
+    }
+
+    T out = 0;
+    out = first->val;
+
     first = first->next;
+    if (first == nullptr)
+    {
+        last = nullptr;
+    }
     size--;
 
     return out;

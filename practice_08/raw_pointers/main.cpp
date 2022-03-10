@@ -46,13 +46,8 @@ void VectorTask_TestSuite()
 
 void MyLinkedList_TestSuite()
 {
-    std::cout << "Default ctor creates one element -> ";
+    std::cout << "Default ctor creates nothing but object\n";
     MyLinkedList <int> llist_one;
-    for (auto& it: llist_one)
-    {
-        std::cout << it << ' ';
-    }
-    std::cout << '\n';
 
     std::cout << "Defined number of elements ctor -> ";
     MyLinkedList <int> llist(5);
