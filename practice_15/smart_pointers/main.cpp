@@ -86,7 +86,7 @@ int main()
                             double two = checkInput(two);
                             coords.push_back(Point2D(one, two));
                         }
-                        std::shared_ptr <Shape> temp = std::move(std::make_shared <Triangle>(coords[0], coords[1], coords[2]));
+                        std::shared_ptr <Shape> temp = std::make_shared <Triangle>(coords[0], coords[1], coords[2]);
                         if (temp->isValid())
                         {
                             shapes.push_back(temp);
@@ -101,7 +101,7 @@ int main()
                     {
                         std::cout << "\nEnter radius:" << std::endl;
                         double radius = checkInput(radius);
-                        std::shared_ptr <Shape> temp = std::move(std::make_shared <Circle>(radius));
+                        std::shared_ptr <Shape> temp = std::make_shared <Circle>(radius);
                         if (temp->isValid())
                         {
                             shapes.push_back(temp);
