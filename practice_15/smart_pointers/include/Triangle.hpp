@@ -31,7 +31,7 @@ public:
 
     double getPerimeter() override;
 
-    bool isValid() override;
+    static bool isValid(Point2D coord1, Point2D coord2, Point2D coord3);
 };
 
 

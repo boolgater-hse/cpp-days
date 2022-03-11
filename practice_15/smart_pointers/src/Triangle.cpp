@@ -14,17 +14,12 @@ Point2D::Point2D()
 
 Triangle::Triangle(Point2D coord1, Point2D coord2, Point2D coord3)
 {
-    double AB = std::sqrt(std::pow(coord2.x - coord1.x, 2) + std::pow(coord2.y - coord1.y, 2));
-    double BC = std::sqrt(std::pow(coord3.x - coord2.x, 2) + std::pow(coord3.y - coord2.y, 2));
-    double CA = std::sqrt(std::pow(coord3.x - coord1.x, 2) + std::pow(coord3.y - coord1.y, 2));
-
-    if (AB + BC <= CA || BC + CA <= AB || CA + AB <= BC)
+    if (!Triangle::isValid(coord1, coord2, coord3))
     {
         return;
     }
 
     this->id = counter++;
-    this->valid = true;
 
     this->coord1 = coord1;
     this->coord2 = coord2;
@@ -40,7 +35,15 @@ double Triangle::getPerimeter()
     return AB + BC + CA;
 }
 
-bool Triangle::isValid()
+bool Triangle::isValid(Point2D coord1, Point2D coord2, Point2D coord3)
 {
-    return this->valid;
+    double AB = std::sqrt(std::pow(coord2.x - coord1.x, 2) + std::pow(coord2.y - coord1.y, 2));
+    double BC = std::sqrt(std::pow(coord3.x - coord2.x, 2) + std::pow(coord3.y - coord2.y, 2));
+    double CA = std::sqrt(std::pow(coord3.x - coord1.x, 2) + std::pow(coord3.y - coord1.y, 2));
+
+    if (AB + BC <= CA || BC + CA <= AB || CA + AB <= BC)
+    {
+        return false;
+    }
+    return true;
 }

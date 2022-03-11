@@ -7,7 +7,6 @@
 class Shape
 {
 protected:
-    bool valid;
     size_t id;
 public:
     Shape();
@@ -17,8 +16,6 @@ public:
     size_t getId();
 
     virtual double getPerimeter() = 0;
-
-    virtual bool isValid() = 0;
 
     virtual ~Shape();
 };

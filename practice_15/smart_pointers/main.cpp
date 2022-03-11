@@ -31,7 +31,7 @@ T& checkInput(T& value)
 
 int main()
 {
-    std::vector <std::shared_ptr <Shape>> shapes;
+    std::vector <std::unique_ptr <Shape>> shapes;
 
     while (true)
     {
@@ -63,10 +63,9 @@ int main()
                         std::cout << "\nEnter width and height:" << std::endl;
                         double width = checkInput(width);
                         double height = checkInput(height);
-                        std::shared_ptr <Shape> temp = std::make_shared <Rectangle>(width, height);
-                        if (temp->isValid())
+                        if (Rectangle::isValid(width, height))
                         {
-                            shapes.push_back(temp);
+                            shapes.emplace_back(std::make_unique <Rectangle>(width, height));
                             std::cout << "Shape successfully created" << std::endl << std::endl;
                         }
                         else
@@ -86,10 +85,9 @@ int main()
                             double two = checkInput(two);
                             coords.push_back(Point2D(one, two));
                         }
-                        std::shared_ptr <Shape> temp = std::make_shared <Triangle>(coords[0], coords[1], coords[2]);
-                        if (temp->isValid())
+                        if (Triangle::isValid(coords[0], coords[1], coords[2]))
                         {
-                            shapes.push_back(temp);
+                            shapes.push_back(std::make_unique <Triangle>(coords[0], coords[1], coords[2]));
                             std::cout << "Shape successfully created" << std::endl << std::endl;
                         }
                         else
@@ -101,10 +99,9 @@ int main()
                     {
                         std::cout << "\nEnter radius:" << std::endl;
                         double radius = checkInput(radius);
-                        std::shared_ptr <Shape> temp = std::make_shared <Circle>(radius);
-                        if (temp->isValid())
+                        if (Circle::isValid(radius))
                         {
-                            shapes.push_back(temp);
+                            shapes.push_back(std::make_unique <Circle>(radius));
                             std::cout << "Shape successfully created" << std::endl << std::endl;
                         }
                         else
@@ -135,7 +132,7 @@ int main()
                     break;
                 }
 
-                std::sort(shapes.begin(), shapes.end(), [](const std::shared_ptr <Shape>& one, const std::shared_ptr <Shape>& two)
+                std::sort(shapes.begin(), shapes.end(), [](const std::unique_ptr <Shape>& one, const std::unique_ptr <Shape>& two)
                 {
                     return one->getPerimeter() > two->getPerimeter();
                 });

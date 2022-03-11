@@ -18,7 +18,7 @@ public:
 
     double getPerimeter() override;
 
-    bool isValid() override;
+    static bool isValid(double radius);
 };
 
 

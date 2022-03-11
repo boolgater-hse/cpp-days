@@ -2,13 +2,12 @@
 
 Rectangle::Rectangle(double width, double height)
 {
-    if (width < 0 || height < 0)
+    if (!Rectangle::isValid(width, height))
     {
         return;
     }
 
     this->id = counter++;
-    this->valid = true;
 
     this->width = width;
     this->height = height;
@@ -21,7 +20,11 @@ double Rectangle::getPerimeter()
     return 2 * (this->width + this->height);
 }
 
-bool Rectangle::isValid()
+bool Rectangle::isValid(double width, double height)
 {
-    return this->valid;
+    if (width < 0 || height < 0)
+    {
+        return false;
+    }
+    return true;
 }

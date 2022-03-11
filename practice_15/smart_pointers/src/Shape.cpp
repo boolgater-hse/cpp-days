@@ -2,7 +2,6 @@
 
 Shape::Shape()
 {
-    valid = false;
     id = 0;
 }
 

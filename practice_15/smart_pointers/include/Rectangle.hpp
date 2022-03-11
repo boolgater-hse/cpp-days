@@ -24,7 +24,7 @@ public:
 
     double getPerimeter() override;
 
-    bool isValid() override;
+    static bool isValid(double width, double height);
 };
 
 #endif //PRACTICE_15_RECTANGLE_HPP
