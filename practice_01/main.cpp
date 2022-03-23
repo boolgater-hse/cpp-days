@@ -85,6 +85,20 @@ string getBinary(int n)
     return temp;
 }
 
+double runProgression(double a, double q, double e)
+{
+    double part = a;
+    size_t power = 0;
+
+    while (part - (a / (1 - q)) < e)
+    {
+        part += (double) 1 / (a * pow(q, power));
+        power += 2;
+    }
+
+    return part;
+}
+
 bool isLatinaAlphabet(char c)
 {
     if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
@@ -120,7 +134,8 @@ int main()
     cout << getBinary(3443) << endl;
 
     // EX 5
-
+    cout << "Go progression:" << endl;
+    cout << runProgression(2, 0.005, 0.0001) << endl;
 
     // EX 6
     cout << "Go alphabet:" << endl;
