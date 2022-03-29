@@ -1,2 +1,0 @@
-cat 0.01
-What do you want to find here? Good code solutions?
