@@ -11,7 +11,7 @@ DynArray::DynArray(size_t n)
 DynArray::DynArray(const DynArray& other)
 {
     this->maxSize = other.maxSize;
-    this->data = std::make_unique <double[]>(maxSize);
+    this->data.reset(new double[maxSize]);
 
     for (size_t i = 0; i < other.maxSize; ++i)
     {
@@ -32,8 +32,7 @@ DynArray& DynArray::operator=(const DynArray& other)
     else
     {
         this->maxSize = other.maxSize;
-        this->data.reset();
-        this->data = std::make_unique <double[]>(maxSize);
+        this->data.reset(new double[maxSize]);
 
         for (size_t i = 0; i < other.maxSize; ++i)
         {
@@ -69,8 +68,7 @@ DynArray& DynArray::operator+(const DynArray& other)
         newData[j] = other.data[i];
     }
 
-    this->data.reset();
-    this->data = std::make_unique <double[]>(newSize);
+    this->data.reset(new double[newSize]);
     this->maxSize = newSize;
     for (int i = 0; i < maxSize; ++i)
     {
